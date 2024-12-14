@@ -20,19 +20,18 @@ public class Child {
     }
 
     Toy chooseToyFor() {
-        List<Toy> wishlist = getWishlist();
         switch (childBehaviour) {
             case NAUGHTY -> {
-                int giftIndex = wishlist.size() - 1;
-                return wishlist.get(giftIndex);
+                int giftIndex = this.wishlist.size() - 1;
+                return this.wishlist.get(giftIndex);
             }
             case NICE -> {
                 int giftIndex = 1;
-                return wishlist.get(giftIndex);
+                return this.wishlist.get(giftIndex);
             }
             case VERY_NICE -> {
                 int giftIndex = 0;
-                return wishlist.get(giftIndex);
+                return this.wishlist.get(giftIndex);
             }
             case null, default -> {
                 return null;
@@ -42,10 +41,6 @@ public class Child {
 
     boolean matches(String childName) {
         return this.childName.matchesName(childName);
-    }
-
-    public List<Toy> getWishlist() {
-        return wishlist;
     }
 
     public void setWishList(Toy firstChoice, Toy secondChoice, Toy thirdChoice) {
