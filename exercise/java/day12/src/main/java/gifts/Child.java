@@ -38,17 +38,17 @@ public class Child {
 
     private Toy getFirstChoiceToy(WishList childWishList, List<Toy> wishlist1) {
         int giftIndex = 0;
-        return wishlist1.get(giftIndex);
+        return childWishList.toys().get(giftIndex);
     }
 
     private Toy getSecondChoiceToy(WishList childWishList, List<Toy> wishlist1) {
         int giftIndex = 1;
-        return wishlist1.get(giftIndex);
+        return childWishList.toys().get(giftIndex);
     }
 
     private Toy getLastChoiceToy(WishList childWishList, List<Toy> wishlist1) {
-        int giftIndex = wishlist1.size() - 1;
-        return wishlist1.get(giftIndex);
+        int giftIndex = childWishList.toys().size() - 1;
+        return childWishList.toys().get(giftIndex);
     }
 
     boolean matches(String childName) {
