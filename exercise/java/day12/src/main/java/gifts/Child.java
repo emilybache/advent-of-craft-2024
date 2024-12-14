@@ -22,21 +22,33 @@ public class Child {
     Toy chooseToyFor() {
         switch (childBehaviour) {
             case NAUGHTY -> {
-                int giftIndex = this.wishlist.size() - 1;
-                return this.wishlist.get(giftIndex);
+                return getLastChoiceToy();
             }
             case NICE -> {
-                int giftIndex = 1;
-                return this.wishlist.get(giftIndex);
+                return getSecondChoiceToy();
             }
             case VERY_NICE -> {
-                int giftIndex = 0;
-                return this.wishlist.get(giftIndex);
+                return getFirstChoiceToy();
             }
             case null, default -> {
                 return null;
             }
         }
+    }
+
+    private Toy getFirstChoiceToy() {
+        int giftIndex = 0;
+        return this.wishlist.get(giftIndex);
+    }
+
+    private Toy getSecondChoiceToy() {
+        int giftIndex = 1;
+        return this.wishlist.get(giftIndex);
+    }
+
+    private Toy getLastChoiceToy() {
+        int giftIndex = this.wishlist.size() - 1;
+        return this.wishlist.get(giftIndex);
     }
 
     boolean matches(String childName) {
