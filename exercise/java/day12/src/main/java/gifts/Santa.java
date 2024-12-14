@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class Santa {
 
     private final List<Child> childrenRepository;
+    private final ChildrenRepository childRepo = new ChildrenRepository();
     public Santa() {
         this.childrenRepository = new ArrayList<>();
     }
@@ -26,15 +27,11 @@ public class Santa {
     }
 
     private Child findChild(String childName) {
-        var found = childrenRepository
-                .stream()
-                .filter(c -> c.getName().equals(childName))
-                .findFirst();
-
-        return found.orElseThrow(NoSuchElementException::new);
+        return childRepo.findChild(childName);
     }
 
     public void addChild(Child child) {
         childrenRepository.add(child);
+        childRepo.add(child);
     }
 }
