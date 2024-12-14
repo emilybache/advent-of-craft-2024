@@ -1,9 +1,7 @@
 package gifts;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Santa {
 
@@ -28,12 +26,11 @@ public class Santa {
     }
 
     private Child findChild(String childName) {
-        Optional<Child> found = Optional.empty();
-        for (Child currentChild : childrenRepository) {
-            if (currentChild.getName().equals(childName)) {
-                found = Optional.of(currentChild);
-            }
-        }
+        var found = childrenRepository
+                .stream()
+                .filter(c -> c.getName().equals(childName))
+                .findFirst();
+
         return found.orElseThrow(NoSuchElementException::new);
     }
 
