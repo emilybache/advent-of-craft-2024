@@ -8,9 +8,13 @@ public class Child {
     private final String behavior;
     private List<Toy> wishlist;
 
-    public Child(String name, String behavior) {
+    private Child(String name, String behavior) {
         this.name = name;
         this.behavior = behavior;
+    }
+
+    public static Child createChild(String name, String behavior) {
+        return new Child(name, behavior);
     }
 
     public String getBehavior() {
