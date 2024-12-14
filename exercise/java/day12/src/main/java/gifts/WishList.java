@@ -12,4 +12,19 @@ public class WishList {
     public List<Toy> toys() {
         return gifts;
     }
+
+    Toy getFirstChoiceToy() {
+        int giftIndex = 0;
+        return toys().get(giftIndex);
+    }
+
+    Toy getSecondChoiceToy() {
+        int giftIndex = 1;
+        return toys().get(giftIndex);
+    }
+
+    Toy getLastChoiceToy() {
+        int giftIndex = toys().size() - 1;
+        return toys().get(giftIndex);
+    }
 }
