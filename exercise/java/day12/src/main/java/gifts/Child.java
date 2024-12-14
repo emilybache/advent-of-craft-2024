@@ -21,16 +21,16 @@ public class Child {
 
     Toy chooseToyFor() {
         List<Toy> wishlist = getWishlist();
-        switch (getBehavior()) {
-            case "naughty" -> {
+        switch (childBehaviour) {
+            case NAUGHTY -> {
                 int giftIndex = wishlist.size() - 1;
                 return wishlist.get(giftIndex);
             }
-            case "nice" -> {
+            case NICE -> {
                 int giftIndex = 1;
                 return wishlist.get(giftIndex);
             }
-            case "very nice" -> {
+            case VERY_NICE -> {
                 int giftIndex = 0;
                 return wishlist.get(giftIndex);
             }
