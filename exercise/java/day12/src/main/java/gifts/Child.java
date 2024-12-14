@@ -18,7 +18,7 @@ public class Child {
     }
 
     boolean matches(String childName) {
-        return this.childName.name().equals(childName);
+        return this.childName.matchesName(childName);
     }
 
     public String getBehavior() {
