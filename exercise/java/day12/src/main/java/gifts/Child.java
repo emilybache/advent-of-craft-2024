@@ -19,6 +19,10 @@ public class Child {
         return new Child(name, behavior);
     }
 
+    boolean matches(String childName) {
+        return getName().equals(childName);
+    }
+
     public String getBehavior() {
         return behavior;
     }

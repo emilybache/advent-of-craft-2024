@@ -14,9 +14,10 @@ public class ChildrenRepository {
     public Child findChild(String childName) {
         var found = childrenRepository
                 .stream()
-                .filter(c -> c.getName().equals(childName))
+                .filter(c -> c.matches(childName))
                 .findFirst();
 
         return found.orElseThrow(NoSuchElementException::new);
     }
+
 }
