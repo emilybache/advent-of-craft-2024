@@ -14,7 +14,7 @@ class SantaTest {
 
     @Test
     void given_naughty_child_when_distributing_gifts_then_child_receives_third_choice() {
-        Child bobby = new Child("bobby", "naughty");
+        Child bobby = Child.createChild("bobby", "naughty");
         bobby.setWishList(PLAYSTATION, PLUSH, BALL);
         Santa santa = new Santa();
         santa.addChild(bobby);
@@ -25,7 +25,7 @@ class SantaTest {
 
     @Test
     void given_nice_child_when_distributing_gifts_then_child_receives_second_choice() {
-        Child bobby = new Child("bobby", "nice");
+        Child bobby = Child.createChild("bobby", "nice");
         bobby.setWishList(PLAYSTATION, PLUSH, BALL);
         Santa santa = new Santa();
         santa.addChild(bobby);
@@ -36,7 +36,7 @@ class SantaTest {
 
     @Test
     void given_very_nice_child_when_distributing_gifts_then_child_receives_first_choice() {
-        Child bobby = new Child("bobby", "very nice");
+        Child bobby = Child.createChild("bobby", "very nice");
         bobby.setWishList(PLAYSTATION, PLUSH, BALL);
         Santa santa = new Santa();
         santa.addChild(bobby);
@@ -48,7 +48,7 @@ class SantaTest {
     @Test
     void given_non_existing_child_when_distributing_gifts_then_exception_thrown() {
         Santa santa = new Santa();
-        Child bobby = new Child("bobby", "very nice");
+        Child bobby = Child.createChild("bobby", "very nice");
         bobby.setWishList(PLAYSTATION, PLUSH, BALL);
         santa.addChild(bobby);
 
