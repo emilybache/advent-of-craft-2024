@@ -5,11 +5,7 @@ import java.util.stream.Collectors;
 
 public class Santa {
 
-    private final List<Child> childrenRepository;
     private final ChildrenRepository childRepo = new ChildrenRepository();
-    public Santa() {
-        this.childrenRepository = new ArrayList<>();
-    }
 
     public Toy chooseToyForChild(String childName){
         Child child = findChild(childName);
@@ -31,7 +27,6 @@ public class Santa {
     }
 
     public void addChild(Child child) {
-        childrenRepository.add(child);
         childRepo.add(child);
     }
 }
