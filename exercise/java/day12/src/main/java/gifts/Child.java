@@ -22,13 +22,13 @@ public class Child {
     Toy chooseToyFor() {
         switch (childBehaviour) {
             case NAUGHTY -> {
-                return getLastChoiceToy(wishlist);
+                return getLastChoiceToy(childWishList.toys());
             }
             case NICE -> {
-                return getSecondChoiceToy(wishlist);
+                return getSecondChoiceToy(childWishList.toys());
             }
             case VERY_NICE -> {
-                return getFirstChoiceToy(wishlist);
+                return getFirstChoiceToy(childWishList.toys());
             }
             case null, default -> {
                 return null;
