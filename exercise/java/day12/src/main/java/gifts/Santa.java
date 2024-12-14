@@ -10,19 +10,21 @@ public class Santa {
         Child child = findChild(childName);
 
         List<Toy> wishlist = child.getWishlist();
-        if("naughty".equals(child.getBehavior())) {
-            int giftIndex = wishlist.size() - 1;
-            return wishlist.get(giftIndex);
-        }
-
-        if("nice".equals(child.getBehavior())) {
-            int giftIndex = 1;
-            return wishlist.get(giftIndex);
-        }
-
-        if("very nice".equals(child.getBehavior())) {
-            int giftIndex = 0;
-            return wishlist.get(giftIndex);
+        switch (child.getBehavior()) {
+            case "naughty" -> {
+                int giftIndex = wishlist.size() - 1;
+                return wishlist.get(giftIndex);
+            }
+            case "nice" -> {
+                int giftIndex = 1;
+                return wishlist.get(giftIndex);
+            }
+            case "very nice" -> {
+                int giftIndex = 0;
+                return wishlist.get(giftIndex);
+            }
+            case null, default -> {
+            }
         }
 
         return null;
