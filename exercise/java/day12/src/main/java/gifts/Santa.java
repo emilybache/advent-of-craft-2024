@@ -1,11 +1,8 @@
 package gifts;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 public class Santa {
 
-    private final ChildrenRepository childRepo = new ChildrenRepository();
+    private final ChildrenRepository childrenRepository = new ChildrenRepository();
 
     public Toy chooseToyForChild(String childName){
         Child child = findChild(childName);
@@ -23,10 +20,10 @@ public class Santa {
     }
 
     private Child findChild(String childName) {
-        return childRepo.findChild(childName);
+        return childrenRepository.findChild(childName);
     }
 
     public void addChild(Child child) {
-        childRepo.add(child);
+        childrenRepository.add(child);
     }
 }
