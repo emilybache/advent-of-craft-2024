@@ -6,8 +6,7 @@ public class Santa {
 
     public Toy chooseToyForChild(String childName){
         Child child = findChild(childName);
-
-        return child.chooseToyFor();
+        return child.chooseToy();
 
     }
 

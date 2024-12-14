@@ -1,7 +1,5 @@
 package gifts;
 
-import java.util.List;
-
 public class Child {
 
     private final ChildName childName;
@@ -18,7 +16,7 @@ public class Child {
         return new Child(name, behavior);
     }
 
-    Toy chooseToyFor() {
+    Toy chooseToy() {
         switch (childBehaviour) {
             case NAUGHTY -> {
                 return childWishList.getLastChoiceToy();
