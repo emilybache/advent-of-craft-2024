@@ -4,12 +4,14 @@ import java.util.List;
 
 public class Child {
 
+    private final ChildName childName;
     private final String name;
     private final String behavior;
     private List<Toy> wishlist;
 
     private Child(String name, String behavior) {
         this.name = name;
+        this.childName = new ChildName(name);
         this.behavior = behavior;
     }
 
