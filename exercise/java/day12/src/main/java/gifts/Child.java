@@ -19,6 +19,27 @@ public class Child {
         return new Child(name, behavior);
     }
 
+    Toy chooseToyFor() {
+        List<Toy> wishlist = getWishlist();
+        switch (getBehavior()) {
+            case "naughty" -> {
+                int giftIndex = wishlist.size() - 1;
+                return wishlist.get(giftIndex);
+            }
+            case "nice" -> {
+                int giftIndex = 1;
+                return wishlist.get(giftIndex);
+            }
+            case "very nice" -> {
+                int giftIndex = 0;
+                return wishlist.get(giftIndex);
+            }
+            case null, default -> {
+                return null;
+            }
+        }
+    }
+
     boolean matches(String childName) {
         return this.childName.matchesName(childName);
     }
