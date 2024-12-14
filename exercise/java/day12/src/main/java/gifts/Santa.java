@@ -24,10 +24,10 @@ public class Santa {
                 return wishlist.get(giftIndex);
             }
             case null, default -> {
+                return null;
             }
         }
 
-        return null;
     }
 
     private Child findChild(String childName) {
