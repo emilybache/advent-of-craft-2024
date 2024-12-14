@@ -6,28 +6,26 @@ public class Santa {
 
     private final ChildrenRepository childrenRepository = new ChildrenRepository();
 
-    public Toy chooseToyForChild(String childName) {
+    public Toy chooseToyForChild(String childName){
         Child child = findChild(childName);
 
         List<Toy> wishlist = child.getWishlist();
-        int giftIndex = -1;
-        if ("naughty".equals(child.getBehavior())) {
-            giftIndex = wishlist.size() - 1;
-        }
-
-        if ("nice".equals(child.getBehavior())) {
-            giftIndex = 1;
-        }
-
-        if ("very nice".equals(child.getBehavior())) {
-            giftIndex = 0;
-        }
-
-        if (giftIndex == -1)
-            return null;
-        else
+        if("naughty".equals(child.getBehavior())) {
+            int giftIndex = wishlist.size() - 1;
             return wishlist.get(giftIndex);
+        }
 
+        if("nice".equals(child.getBehavior())) {
+            int giftIndex = 1;
+            return wishlist.get(giftIndex);
+        }
+
+        if("very nice".equals(child.getBehavior())) {
+            int giftIndex = 0;
+            return wishlist.get(giftIndex);
+        }
+
+        return null;
     }
 
     private Child findChild(String childName) {
