@@ -5,12 +5,10 @@ import java.util.List;
 public class Child {
 
     private final ChildName childName;
-    private final String name;
     private final String behavior;
     private List<Toy> wishlist;
 
     private Child(String name, String behavior) {
-        this.name = name;
         this.childName = new ChildName(name);
         this.behavior = behavior;
     }
@@ -20,7 +18,7 @@ public class Child {
     }
 
     boolean matches(String childName) {
-        return getName().equals(childName);
+        return this.childName.name().equals(childName);
     }
 
     public String getBehavior() {
@@ -29,10 +27,6 @@ public class Child {
 
     public List<Toy> getWishlist() {
         return wishlist;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setWishList(Toy firstChoice, Toy secondChoice, Toy thirdChoice) {
